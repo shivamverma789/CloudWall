@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Upload | CloudWall</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+
+    <nav class="navbar">
+
+        <a href="/" class="logo">
+            CloudWall
+        </a>
+
+        <div class="nav-links">
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <form action="/logout" method="POST">
+
+                <button
+                    type="submit"
+                    class="nav-button"
+                >
+                    Logout
+                </button>
+
+            </form>
+
+        </div>
+
+    </nav>
+
+
+    <main class="container">
+
+        <section class="form-container">
+
+            <div class="form-card">
+
+                <h1>
+                    Upload Image
+                </h1>
+
+                <p class="form-description">
+                    Share an image with the CloudWall community.
+                </p>
+
+
+                <% if (error) { %>
+
+                    <p class="form-error">
+                        <%= error %>
+                    </p>
+
+                <% } %>
+
+
+                <form
+                    action="/upload"
+                    method="POST"
+                    enctype="multipart/form-data"
+                >
+
+                    <div class="form-group">
+
+                        <label for="image">
+                            Choose an image
+                        </label>
+
+                        <input
+                            type="file"
+                            id="image"
+                            name="image"
+                            accept="image/*"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="button full"
+                    >
+                        Upload Image
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+</body>
+
+</html>

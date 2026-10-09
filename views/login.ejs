@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Login | CloudWall</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <a href="/" class="logo">
+            CloudWall
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="/">
+                Gallery
+            </a>
+
+            <a href="/register" class="nav-button">
+                Create Account
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- Login Form -->
+
+    <main class="form-container">
+
+        <div class="form-card">
+
+
+            <p class="eyebrow">
+                WELCOME BACK
+            </p>
+
+
+            <h1>
+                Login
+            </h1>
+
+
+            <p class="form-description">
+                Login to your CloudWall account and
+                start sharing images.
+            </p>
+            <% if (error) { %>
+
+                <p class="form-error">
+                    <%= error %>
+                </p>
+
+            <% } %>
+
+
+            <form action="/login" method="POST">
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- Submit -->
+
+                <button
+                    type="submit"
+                    class="button full"
+                >
+                    Login
+                </button>
+
+
+            </form>
+
+
+
+            <p class="form-footer">
+
+                Don't have an account?
+
+                <a href="/register">
+                    Create an account
+                </a>
+
+            </p>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- Footer -->
+
+    <footer class="footer">
+
+        <p>
+            CloudWall &copy; 2026
+        </p>
+
+
+        <p>
+            Built with Express + EJS
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

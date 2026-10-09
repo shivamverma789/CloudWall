@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard | CloudWall</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <a href="/" class="logo">
+            CloudWall
+        </a>
+
+        <div class="nav-links">
+
+            <a href="/">
+                Gallery
+            </a>
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <form action="/logout" method="POST">
+
+                <button
+                    type="submit"
+                    class="nav-button"
+                >
+                    Logout
+                </button>
+
+            </form>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Dashboard -->
+
+    <main class="container">
+
+       <section class="hero">
+
+    <p class="eyebrow">
+        DASHBOARD
+    </p>
+
+    <h1>
+        Welcome, <%= user.name %>.
+    </h1>
+
+    <p class="hero-text">
+        You are successfully logged in to CloudWall.
+    </p>
+
+    <div class="hero-actions">
+
+        <a
+            href="/upload"
+            class="button"
+        >
+            Upload Image
+        </a>
+
+        <a
+            href="/"
+            class="button secondary"
+        >
+            View Gallery
+        </a>
+
+    </div>
+
+</section>
+
+        <!-- User Information -->
+
+        <section class="info-section">
+
+            <div class="info-card">
+
+                <div class="info-number">
+                    USER
+                </div>
+
+                <h3>
+                    <%= user.name %>
+                </h3>
+
+                <p>
+                    Your CloudWall account.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-number">
+                    EMAIL
+                </div>
+
+                <h3>
+                    <%= user.email %>
+                </h3>
+
+                <p>
+                    Your registered email address.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-number">
+                    STATUS
+                </div>
+
+                <h3>
+                    Logged In
+                </h3>
+
+                <p>
+                    Your session is active.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer class="footer">
+
+        <p>
+            CloudWall &copy; 2026
+        </p>
+
+        <p>
+            Built with Express + EJS
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

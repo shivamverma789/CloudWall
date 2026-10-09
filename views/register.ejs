@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | CloudWall</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <a href="/" class="logo">
+            CloudWall
+        </a>
+
+        <div class="nav-links">
+            <a href="/">Gallery</a>
+            <a href="/login">Login</a>
+        </div>
+
+    </nav>
+
+
+    <main class="form-container">
+
+        <div class="form-card">
+
+            <p class="eyebrow">
+                JOIN CLOUDWALL
+            </p>
+
+            <h1>Create your account</h1>
+
+            <p class="form-description">
+                Create an account to upload and share images.
+            </p>
+
+
+            <form action="/register" method="POST">
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create a password"
+                        required
+                    >
+                </div>
+                <% if (error) { %>
+
+                <p class="form-error">
+                    <%= error %>
+                </p>
+
+                <% } %>
+
+
+                <button type="submit" class="button full">
+                    Create Account
+                </button>
+
+            </form>
+
+
+            <p class="form-footer">
+                Already have an account?
+                <a href="/login">Login</a>
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <p>CloudWall &copy; 2026</p>
+
+        <p>Built with Express + EJS</p>
+
+    </footer>
+
+</body>
+
+</html>

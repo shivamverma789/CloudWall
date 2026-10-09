@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><%= title %></title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <a href="/" class="logo">CloudWall</a>
+
+        <div class="nav-links">
+            <a href="/">Gallery</a>
+
+            <% if (typeof user !== "undefined" && user) { %>
+
+                <a href="/dashboard">Dashboard</a>
+
+                <form action="/logout" method="POST">
+                    <button type="submit" class="nav-button">
+                        Logout
+                    </button>
+                </form>
+
+            <% } else { %>
+
+                <a href="/login">Login</a>
+
+                <a href="/register" class="nav-button">
+                    Create Account
+                </a>
+
+            <% } %>
+        </div>
+
+    </nav>
+
+    <main class="container">
+
+        <section class="hero">
+
+            <p class="eyebrow">CLOUD IMAGE SHARING</p>
+
+            <h1>
+                Upload something.<br>
+                Share it with everyone.
+            </h1>
+
+            <p class="hero-text">
+                Discover images shared by the CloudWall community.
+            </p>
+
+            <div class="hero-actions">
+
+                <% if (typeof user !== "undefined" && user) { %>
+
+                    <a href="/upload" class="button">
+                        Upload Image
+                    </a>
+
+                <% } else { %>
+
+                    <a href="/register" class="button">
+                        Get Started
+                    </a>
+
+                    <a href="/login" class="button secondary">
+                        Login
+                    </a>
+
+                <% } %>
+
+            </div>
+
+        </section>
+
+
+        <section class="gallery-section">
+
+            <div class="gallery-heading">
+                <h2>Community Gallery</h2>
+
+                <p>
+                    <%= images.length %>
+                    <%= images.length === 1 ? "image" : "images" %>
+                </p>
+            </div>
+
+            <% if (images.length === 0) { %>
+
+                <div class="empty-gallery">
+
+                    <h3>No images yet</h3>
+
+                    <p>
+                        Be the first to share something with the community.
+                    </p>
+
+                </div>
+
+            <% } else { %>
+
+                <div class="gallery-grid">
+
+                    <% images.forEach((image) => { %>
+
+                        <article class="gallery-card">
+
+                            <img
+                                src="<%= image.image_url %>"
+                                alt="Image uploaded by <%= image.uploader %>"
+                                loading="lazy"
+                            >
+
+                            <div class="gallery-card-info">
+
+                                <h3><%= image.uploader %></h3>
+
+                                <p>
+                                    Shared on
+                                    <%= image.created_at %>
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    <% }) %>
+
+                </div>
+
+            <% } %>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <p>CloudWall &copy; 2026</p>
+
+        <p>Built with Express + EJS</p>
+
+    </footer>
+
+</body>
+
+</html>
+```
